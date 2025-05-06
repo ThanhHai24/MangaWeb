@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <title>Admin Panel - Manga Website</title>
+    </head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3>Manga Admin</h3>
+                <p>Quản lý nội dung</p>
+            </div>
+            <div class="sidebar-menu">
+                <ul>
+                    <a href="index.html"><li class="menu-item" data-page="dashboard">Dashboard</li></a>
+                    <a href="mangas.html"><li class="menu-item active" data-page="manga-list">Danh sách Manga</li></a>
+                    <a href="chapters.html"><li class="menu-item" data-page="chapters">Quản lý Chapter</li></a>
+                    <a href="categories.html"><li class="menu-item" data-page="categories">Thể loại</li></a>
+                    <a href="users.html"><li class="menu-item" data-page="users">Người dùng</li></a>
+                    <a href="comments.html"><li class="menu-item" data-page="comments">Bình luận</li></a>
+                    <a href="settings.html"><li class="menu-item" data-page="settings">Cài đặt</li></a>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Tìm kiếm...">
+                </div>
+                <div class="user-info">
+                    <img src="/api/placeholder/40/40" alt="Admin User">
+                    <span>Admin</span>
+                </div>
+            </div>
+            <!-- Manga List Page -->
+            <div class="page-content active" id="manga-list">
+                <div class="content-section">
+                    <div class="section-header">
+                        <h2>Danh sách Manga</h2>
+                        <button class="btn btn-primary" id="add-manga-btn">Thêm Manga mới</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Ảnh bìa</th>
+                                <th>Tên Manga</th>
+                                <th>Tác giả</th>
+                                <th>Số chapter</th>
+                                <th>Lượt xem</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="manga-list-table">
+                            <tr>
+                                <td>1</td>
+                                <td><img src="/api/placeholder/50/70" alt="Manga cover"></td>
+                                <td>One Piece</td>
+                                <td>Eiichiro Oda</td>
+                                <td>1088</td>
+                                <td>5,245</td>
+                                <td>Đang cập nhật</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm edit-manga">Sửa</button>
+                                    <button class="btn btn-danger btn-sm delete-manga">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><img src="/api/placeholder/50/70" alt="Manga cover"></td>
+                                <td>Naruto</td>
+                                <td>Masashi Kishimoto</td>
+                                <td>700</td>
+                                <td>4,512</td>
+                                <td>Hoàn thành</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm edit-manga">Sửa</button>
+                                    <button class="btn btn-danger btn-sm delete-manga">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><img src="/api/placeholder/50/70" alt="Manga cover"></td>
+                                <td>Bleach</td>
+                                <td>Tite Kubo</td>
+                                <td>686</td>
+                                <td>3,245</td>
+                                <td>Hoàn thành</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm edit-manga">Sửa</button>
+                                    <button class="btn btn-danger btn-sm delete-manga">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td><img src="/api/placeholder/50/70" alt="Manga cover"></td>
+                                <td>Attack on Titan</td>
+                                <td>Hajime Isayama</td>
+                                <td>139</td>
+                                <td>4,125</td>
+                                <td>Hoàn thành</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm edit-manga">Sửa</button>
+                                    <button class="btn btn-danger btn-sm delete-manga">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td><img src="/api/placeholder/50/70" alt="Manga cover"></td>
+                                <td>My Hero Academia</td>
+                                <td>Kohei Horikoshi</td>
+                                <td>425</td>
+                                <td>3,854</td>
+                                <td>Đang cập nhật</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm edit-manga">Sửa</button>
+                                    <button class="btn btn-danger btn-sm delete-manga">Xóa</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Add Manga Modal -->
+    <div class="modal" id="add-manga-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Thêm Manga mới</h3>
+                <span class="close">&times;</span>
+            </div>
+            <form id="add-manga-form">
+                <div class="form-group">
+                    <label for="manga-title">Tên Manga</label>
+                    <input type="text" class="form-control" id="manga-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="manga-author">Tác giả</label>
+                    <input type="text" class="form-control" id="manga-author" required>
+                </div>
+                <div class="form-group">
+                    <label for="manga-cover">Ảnh bìa</label>
+                    <input type="file" class="form-control" id="manga-cover" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="manga-description">Mô tả</label>
+                    <textarea class="form-control" id="manga-description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="manga-categories">Thể loại</label>
+                    <select class="form-control" id="manga-categories" multiple>
+                        <option value="1">Action</option>
+                        <option value="2">Adventure</option>
+                        <option value="3">Comedy</option>
+                        <option value="4">Drama</option>
+                        <option value="5">Fantasy</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="manga-status">Trạng thái</label>
+                    <select class="form-control" id="manga-status">
+                        <option value="ongoing">Đang cập nhật</option>
+                        <option value="completed">Hoàn thành</option>
+                        <option value="dropped">Tạm dừng</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger close-modal">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Thêm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="delete-confirm-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Xác nhận xóa</h3>
+                <span class="close">&times;</span>
+            </div>
+            <p>Bạn có chắc chắn muốn xóa mục này không? Hành động này không thể hoàn tác.</p>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary close-modal">Hủy</button>
+                <button type="button" class="btn btn-danger" id="confirm-delete">Xóa</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="assets/js/scripts.js"></script>
+</html>

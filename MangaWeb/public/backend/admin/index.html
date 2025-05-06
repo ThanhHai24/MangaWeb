@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <title>Admin Panel - Manga Website</title>
+    </head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3>Manga Admin</h3>
+                <p>Quản lý nội dung</p>
+            </div>
+            <div class="sidebar-menu">
+                <ul>
+                    <a href="index.html"><li class="menu-item active" data-page="dashboard">Dashboard</li></a>
+                    <a href="mangas.html"><li class="menu-item" data-page="manga-list">Danh sách Manga</li></a>
+                    <a href="chapters.html"><li class="menu-item" data-page="chapters">Quản lý Chapter</li></a>
+                    <a href="categories.html"><li class="menu-item" data-page="categories">Thể loại</li></a>
+                    <a href="users.html"><li class="menu-item" data-page="users">Người dùng</li></a>
+                    <a href="comments.html"><li class="menu-item" data-page="comments">Bình luận</li></a>
+                    <a href="settings.html"><li class="menu-item" data-page="settings">Cài đặt</li></a>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Tìm kiếm...">
+                </div>
+                <div class="user-info">
+                    <img src="/api/placeholder/40/40" alt="Admin User">
+                    <span>Admin</span>
+                </div>
+            </div>
+            <!-- Dashboard -->
+            <div class="page-content active" id="dashboard">
+                <h2>Dashboard</h2>
+                <div class="dashboard">
+                    <div class="stat-card">
+                        <h3>Tổng số Manga</h3>
+                        <div class="number">245</div>
+                        <div class="trend">+15 trong tháng này</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Lượt xem</h3>
+                        <div class="number">15,245</div>
+                        <div class="trend">+12% so với tháng trước</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Số lượng thành viên</h3>
+                        <div class="number">1,256</div>
+                        <div class="trend">+24 trong tuần này</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Bình luận mới</h3>
+                        <div class="number">342</div>
+                        <div class="trend down">-5% so với tuần trước</div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <div class="section-header">
+                        <h3>Manga mới thêm gần đây</h3>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ảnh bìa</th>
+                                <th>Tên Manga</th>
+                                <th>Tác giả</th>
+                                <th>Ngày thêm</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="/api/placeholder/50/70" alt="Manga cover"></td>
+                                <td>One Piece</td>
+                                <td>Eiichiro Oda</td>
+                                <td>12/04/2025</td>
+                                <td>Đang cập nhật</td>
+                            </tr>
+                            <tr>
+                                <td><img src="/api/placeholder/50/70" alt="Manga cover"></td>
+                                <td>Naruto</td>
+                                <td>Masashi Kishimoto</td>
+                                <td>10/04/2025</td>
+                                <td>Hoàn thành</td>
+                            </tr>
+                            <tr>
+                                <td><img src="/api/placeholder/50/70" alt="Manga cover"></td>
+                                <td>Bleach</td>
+                                <td>Tite Kubo</td>
+                                <td>08/04/2025</td>
+                                <td>Hoàn thành</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="assets/js/scripts.js"></script>
+</html>

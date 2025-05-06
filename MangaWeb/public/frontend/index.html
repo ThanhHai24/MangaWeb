@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+  <title>TruyệnViet - Đọc truyện online</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-top">
+        <div class="logo">
+          <h1>PTIT<span>COMIC</span></h1>
+        </div>
+        <div class="search-bar">
+          <input type="text" placeholder="Tìm kiếm truyện...">
+        </div>  
+        <div class="user-actions">
+          <a href="#">Đăng nhập</a>
+          <a href="#">Đăng ký</a>
+        </div>
+      </div>
+    </div>
+    
+    <nav class="main-nav">
+      <div class="container">
+        <ul>
+          <li><a href="#">Trang chủ</a></li>
+          <li>
+            <a href="#">Thể loại</a>
+            <div class="dropdown">
+              <a href="#">Action</a>
+              <a href="#">Adventure</a>
+              <a href="#">Comedy</a>
+              <a href="#">Drama</a>
+              <a href="#">Fantasy</a>
+              <a href="#">Horror</a>
+              <a href="#">Romance</a>
+              <a href="#">Slice of Life</a>
+            </div>
+          </li>
+          <li><a href="#">Truyện Hot</a></li>
+          <li><a href="#">Truyện Mới</a></li>
+          <li><a href="#">Hoàn Thành</a></li>
+          <li><a href="#">Xếp Hạng</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+  <main class="main-content">
+    <div class="container">
+      <!-- Truyện Đề Xuất -->
+      <section>
+        <h2 class="section-title">
+          <span>Truyện Đề Xuất</span>
+          <a href="#">Xem tất cả</a>
+        </h2>
+        
+        <div class="manga-grid">
+          <div class="manga-card">
+            <div class="manga-cover">
+              <img src="/assets/images/vo-luyen-dinh-phong.avif" alt="Truyện 1">
+              <div class="hot-badge">HOT</div>
+              <div class="chapter-update">Chapter 215</div>
+            </div>
+            <div class="manga-info">
+              <h3 class="manga-title"><a href="detail.html">Võ Luyện Đỉnh Phong</a></h3>
+              <div class="manga-meta">
+                <span>7.8</span>
+                <span>Action, Cultivation</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="manga-card">
+            <div class="manga-cover">
+              <img src="/api/placeholder/180/240" alt="Truyện 2">
+              <div class="chapter-update">Chapter 56</div>
+            </div>
+            <div class="manga-info">
+              <h3 class="manga-title">Tu Tiên Trở Về Tại Vườn Trường</h3>
+              <div class="manga-meta">
+                <span>8.5</span>
+                <span>Fantasy, School</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="manga-card">
+            <div class="manga-cover">
+              <img src="/api/placeholder/180/240" alt="Truyện 3">
+              <div class="hot-badge">HOT</div>
+              <div class="chapter-update">Chapter 78</div>
+            </div>
+            <div class="manga-info">
+              <h3 class="manga-title">Đấu Phá Thương Khung</h3>
+              <div class="manga-meta">
+                <span>9.1</span>
+                <span>Adventure, Fantasy</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="manga-card">
+            <div class="manga-cover">
+              <img src="/api/placeholder/180/240" alt="Truyện 4">
+              <div class="chapter-update">Chapter 42</div>
+            </div>
+            <div class="manga-info">
+              <h3 class="manga-title">Linh Kiếm Tôn</h3>
+              <div class="manga-meta">
+                <span>7.5</span>
+                <span>Action, Drama</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="manga-card">
+            <div class="manga-cover">
+              <img src="/api/placeholder/180/240" alt="Truyện 5">
+              <div class="chapter-update">Chapter 98</div>
+            </div>
+            <div class="manga-info">
+              <h3 class="manga-title">Trọng Sinh Đô Thị Tiên Tôn</h3>
+              <div class="manga-meta">
+                <span>8.2</span>
+                <span>Fantasy, Romance</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="manga-card">
+            <div class="manga-cover">
+              <img src="/api/placeholder/180/240" alt="Truyện 6">
+              <div class="hot-badge">HOT</div>
+              <div class="chapter-update">Chapter 122</div>
+            </div>
+            <div class="manga-info">
+              <h3 class="manga-title">Vạn Cổ Thần Đế</h3>
+              <div class="manga-meta">
+                <span>8.7</span>
+                <span>Action, Fantasy</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Truyện Mới Cập Nhật -->
+      <section class="latest-updates">
+        <h2 class="section-title">
+          <span>Truyện Mới Cập Nhật</span>
+          <a href="#">Xem tất cả</a>
+        </h2>
+        
+        <div class="updates-list">
+          <div class="update-item">
+            <div class="update-thumbnail">
+              <img src="/api/placeholder/60/80" alt="Update 1">
+            </div>
+            <div class="update-info">
+              <h3 class="update-title">Tiên Nghịch</h3>
+              <div class="update-chapters">
+                <a href="#" class="update-chapter">Chapter 345</a>
+                <a href="#" class="update-chapter">Chapter 344</a>
+                <a href="#" class="update-chapter">Chapter 343</a>
+              </div>
+              <div class="update-time">4 giờ trước</div>
+            </div>
+          </div>
+          
+          <div class="update-item">
+            <div class="update-thumbnail">
+              <img src="/api/placeholder/60/80" alt="Update 2">
+            </div>
+            <div class="update-info">
+              <h3 class="update-title">Đấu La Đại Lục</h3>
+              <div class="update-chapters">
+                <a href="#" class="update-chapter">Chapter 289</a>
+                <a href="#" class="update-chapter">Chapter 288</a>
+              </div>
+              <div class="update-time">6 giờ trước</div>
+            </div>
+          </div>
+          
+          <div class="update-item">
+            <div class="update-thumbnail">
+              <img src="/api/placeholder/60/80" alt="Update 3">
+            </div>
+            <div class="update-info">
+              <h3 class="update-title">Ngự Linh Thế Giới</h3>
+              <div class="update-chapters">
+                <a href="#" class="update-chapter">Chapter 178</a>
+                <a href="#" class="update-chapter">Chapter 177</a>
+                <a href="#" class="update-chapter">Chapter 176</a>
+              </div>
+              <div class="update-time">12 giờ trước</div>
+            </div>
+          </div>
+          
+          <div class="update-item">
+            <div class="update-thumbnail">
+              <img src="/api/placeholder/60/80" alt="Update 4">
+            </div>
+            <div class="update-info">
+              <h3 class="update-title">Phàm Nhân Tu Tiên</h3>
+              <div class="update-chapters">
+                <a href="#" class="update-chapter">Chapter 456</a>
+              </div>
+              <div class="update-time">1 ngày trước</div>
+            </div>
+          </div>
+          
+          <div class="update-item">
+            <div class="update-thumbnail">
+              <img src="/api/placeholder/60/80" alt="Update 5">
+            </div>
+            <div class="update-info">
+              <h3 class="update-title">Yêu Thần Ký</h3>
+              <div class="update-chapters">
+                <a href="#" class="update-chapter">Chapter 267</a>
+                <a href="#" class="update-chapter">Chapter 266</a>
+              </div>
+              <div class="update-time">2 ngày trước</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Truyện Hoàn Thành -->
+      <section>
+        <h2 class="section-title">
+          <span>Truyện Hoàn Thành</span>
+          <a href="#">Xem tất cả</a>
+        </h2>
+        
+        <div class="manga-grid">
+          <div class="manga-card">
+            <div class="manga-cover">
+              <img src="/api/placeholder/180/240" alt="Completed 1">
+              <div class="chapter-update">Hoàn Thành - 420 Chapters</div>
+            </div>
+            <div class="manga-info">
+              <h3 class="manga-title">Thông Thiên Đại Đạo</h3>
+              <div class="manga-meta">
+                <span>9.4</span>
+                <span>Cultivation, Fantasy</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="manga-card">
+            <div class="manga-cover">
+              <img src="/api/placeholder/180/240" alt="Completed 2">
+              <div class="chapter-update">Hoàn Thành - 356 Chapters</div>
+            </div>
+            <div class="manga-info">
+              <h3 class="manga-title">Bách Luyện Thành Thần</h3>
+              <div class="manga-meta">
+                <span>8.9</span>
+                <span>Action, Adventure</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="manga-card">
+            <div class="manga-cover">
+              <img src="/api/placeholder/180/240" alt="Completed 3">
+              <div class="chapter-update">Hoàn Thành - 285 Chapters</div>
+            </div>
+            <div class="manga-info">
+              <h3 class="manga-title">Thiên Đạo Đồ Thư Quán</h3>
+              <div class="manga-meta">
+                <span>8.6</span>
+                <span>Comedy, Fantasy</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="manga-card">
+            <div class="manga-cover">
+              <img src="/api/placeholder/180/240" alt="Completed 4">
+              <div class="chapter-update">Hoàn Thành - 198 Chapters</div>
+            </div>
+            <div class="manga-info">
+              <h3 class="manga-title">Vũ Động Càn Khôn</h3>
+              <div class="manga-meta">
+                <span>9.2</span>
+                <span>Action, Fantasy</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="manga-card">
+            <div class="manga-cover">
+              <img src="/api/placeholder/180/240" alt="Completed 5">
+              <div class="chapter-update">Hoàn Thành - 312 Chapters</div>
+            </div>
+            <div class="manga-info">
+              <h3 class="manga-title">Tiên Giới Toàn Năng</h3>
+              <div class="manga-meta">
+                <span>8.1</span>
+                <span>Fantasy, Slice of Life</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="manga-card">
+            <div class="manga-cover">
+              <img src="/api/placeholder/180/240" alt="Completed 6">
+              <div class="chapter-update">Hoàn Thành - 276 Chapters</div>
+            </div>
+            <div class="manga-info">
+              <h3 class="manga-title">Thần Mộ</h3>
+              <div class="manga-meta">
+                <span>8.8</span>
+                <span>Adventure, Mystery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Về TruyệnViet</h3>
+          <ul class="footer-links">
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Liên hệ</a></li>
+            <li><a href="#">Điều khoản sử dụng</a></li>
+            <li><a href="#">Chính sách bảo mật</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Hỗ Trợ</h3>
+          <ul class="footer-links">
+            <li><a href="#">Hướng dẫn đọc truyện</a></li>
+            <li><a href="#">Báo lỗi</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Thể Loại</h3>
+          <ul class="footer-links">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Adventure</a></li>
+            <li><a href="#">Fantasy</a></li>
+            <li><a href="#">Comedy</a></li>
+            <li><a href="#">Romance</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Theo Dõi</h3>
+          <ul class="footer-links">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Discord</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 TruyệnViet. Tất cả các quyền được bảo lưu.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // JavaScript để xử lý tìm kiếm
+    document.querySelector('.search-bar input').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        alert('Đang tìm kiếm: ' + this.value);
+        this.value = '';
+      }
+    });
+    
+    // JavaScript để xử lý dropdown menu trên thiết bị di động
+    document.addEventListener('DOMContentLoaded', function() {
+      const navItems = document.querySelectorAll('.main-nav li');
+      
+      if (window.innerWidth <= 768) {
+        navItems.forEach(item => {
+          if (item.querySelector('.dropdown')) {
+            const link = item.querySelector('a');
+            link.addEventListener('click', function(e) {
+              e.preventDefault();
+              const dropdown = this.parentNode.querySelector('.dropdown');
+              dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            });
+          }
+        });
+      }
+    });
+    
+    // Giả lập chức năng đăng nhập
+    document.querySelector('.user-actions a:first-child').addEventListener('click', function(e) {
+      e.preventDefault();
+      alert('Chức năng đăng nhập sẽ được cài đặt ở đây');
+    });
+    
+    // Giả lập chức năng đăng ký
+    document.querySelector('.user-actions a:last-child').addEventListener('click', function(e) {
+      e.preventDefault();
+      alert('Chức năng đăng ký sẽ được cài đặt ở đây');
+    });
+  </script>
+</body>
+</html>

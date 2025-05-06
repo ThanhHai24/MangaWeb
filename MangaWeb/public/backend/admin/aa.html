@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Admin Panel - Manga Website</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3>Manga Admin</h3>
+                <p>Quản lý nội dung</p>
+            </div>
+            <div class="sidebar-menu">
+                <ul>
+                    <li class="menu-item active" data-page="dashboard">Dashboard</li>
+                    <li class="menu-item" data-page="manga-list">Danh sách Manga</li>
+                    <li class="menu-item" data-page="chapters">Quản lý Chapter</li>
+                    <li class="menu-item" data-page="categories">Thể loại</li>
+                    <li class="menu-item" data-page="users">Người dùng</li>
+                    <li class="menu-item" data-page="comments">Bình luận</li>
+                    <li class="menu-item" data-page="settings">Cài đặt</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Tìm kiếm...">
+                </div>
+                <div class="user-info">
+                    <img src="/api/placeholder/40/40" alt="Admin User">
+                    <span>Admin</span>
+                </div>
+            </div>
+
+            <!-- Dashboard Page -->
+            <div class="page-content active" id="dashboard">
+                <h2>Dashboard</h2>
+                <div class="dashboard">
+                    <div class="stat-card">
+                        <h3>Tổng số Manga</h3>
+                        <div class="number">245</div>
+                        <div class="trend">+15 trong tháng này</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Lượt xem</h3>
+                        <div class="number">15,245</div>
+                        <div class="trend">+12% so với tháng trước</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Số lượng thành viên</h3>
+                        <div class="number">1,256</div>
+                        <div class="trend">+24 trong tuần này</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Bình luận mới</h3>
+                        <div class="number">342</div>
+                        <div class="trend down">-5% so với tuần trước</div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <div class="section-header">
+                        <h3>Manga mới thêm gần đây</h3>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ảnh bìa</th>
+                                <th>Tên Manga</th>
+                                <th>Tác giả</th>
+                                <th>Ngày thêm</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="/api/placeholder/50/70" alt="Manga cover"></td>
+                                <td>One Piece</td>
+                                <td>Eiichiro Oda</td>
+                                <td>12/04/2025</td>
+                                <td>Đang cập nhật</td>
+                            </tr>
+                            <tr>
+                                <td><img src="/api/placeholder/50/70" alt="Manga cover"></td>
+                                <td>Naruto</td>
+                                <td>Masashi Kishimoto</td>
+                                <td>10/04/2025</td>
+                                <td>Hoàn thành</td>
+                            </tr>
+                            <tr>
+                                <td><img src="/api/placeholder/50/70" alt="Manga cover"></td>
+                                <td>Bleach</td>
+                                <td>Tite Kubo</td>
+                                <td>08/04/2025</td>
+                                <td>Hoàn thành</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Manga List Page -->
+            <div class="page-content" id="manga-list">
+                <div class="content-section">
+                    <div class="section-header">
+                        <h2>Danh sách Manga</h2>
+                        <button class="btn btn-primary" id="add-manga-btn">Thêm Manga mới</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Ảnh bìa</th>
+                                <th>Tên Manga</th>
+                                <th>Tác giả</th>
+                                <th>Số chapter</th>
+                                <th>Lượt xem</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="manga-list-table">
+                            <tr>
+                                <td>1</td>
+                                <td><img src="/api/placeholder/50/70" alt="Manga cover"></td>
+                                <td>One Piece</td>
+                                <td>Eiichiro Oda</td>
+                                <td>1088</td>
+                                <td>5,245</td>
+                                <td>Đang cập nhật</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm edit-manga">Sửa</button>
+                                    <button class="btn btn-danger btn-sm delete-manga">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><img src="/api/placeholder/50/70" alt="Manga cover"></td>
+                                <td>Naruto</td>
+                                <td>Masashi Kishimoto</td>
+                                <td>700</td>
+                                <td>4,512</td>
+                                <td>Hoàn thành</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm edit-manga">Sửa</button>
+                                    <button class="btn btn-danger btn-sm delete-manga">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><img src="/api/placeholder/50/70" alt="Manga cover"></td>
+                                <td>Bleach</td>
+                                <td>Tite Kubo</td>
+                                <td>686</td>
+                                <td>3,245</td>
+                                <td>Hoàn thành</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm edit-manga">Sửa</button>
+                                    <button class="btn btn-danger btn-sm delete-manga">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td><img src="/api/placeholder/50/70" alt="Manga cover"></td>
+                                <td>Attack on Titan</td>
+                                <td>Hajime Isayama</td>
+                                <td>139</td>
+                                <td>4,125</td>
+                                <td>Hoàn thành</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm edit-manga">Sửa</button>
+                                    <button class="btn btn-danger btn-sm delete-manga">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td><img src="/api/placeholder/50/70" alt="Manga cover"></td>
+                                <td>My Hero Academia</td>
+                                <td>Kohei Horikoshi</td>
+                                <td>425</td>
+                                <td>3,854</td>
+                                <td>Đang cập nhật</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm edit-manga">Sửa</button>
+                                    <button class="btn btn-danger btn-sm delete-manga">Xóa</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Chapters Page -->
+            <div class="page-content" id="chapters">
+                <div class="content-section">
+                    <div class="section-header">
+                        <h2>Quản lý Chapter</h2>
+                        <button class="btn btn-primary" id="add-chapter-btn">Thêm Chapter mới</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="manga-select">Chọn Manga</label>
+                        <select class="form-control" id="manga-select">
+                            <option value="">-- Chọn Manga --</option>
+                            <option value="1">One Piece</option>
+                            <option value="2">Naruto</option>
+                            <option value="3">Bleach</option>
+                            <option value="4">Attack on Titan</option>
+                            <option value="5">My Hero Academia</option>
+                        </select>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Chapter</th>
+                                <th>Tiêu đề</th>
+                                <th>Ngày đăng</th>
+                                <th>Lượt xem</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="chapter-list-table">
+                            <tr>
+                                <td>Chapter 1088</td>
+                                <td>Khúc cuối hành trình</td>
+                                <td>12/04/2025</td>
+                                <td>1,245</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm edit-chapter">Sửa</button>
+                                    <button class="btn btn-danger btn-sm delete-chapter">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 1087</td>
+                                <td>Cuộc chiến cuối cùng</td>
+                                <td>05/04/2025</td>
+                                <td>1,562</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm edit-chapter">Sửa</button>
+                                    <button class="btn btn-danger btn-sm delete-chapter">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 1086</td>
+                                <td>Sức mạnh thật sự</td>
+                                <td>29/03/2025</td>
+                                <td>1,842</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm edit-chapter">Sửa</button>
+                                    <button class="btn btn-danger btn-sm delete-chapter">Xóa</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Categories Page -->
+            <div class="page-content" id="categories">
+                <div class="content-section">
+                    <div class="section-header">
+                        <h2>Thể loại</h2>
+                        <button class="btn btn-primary" id="add-category-btn">Thêm thể loại mới</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Tên thể loại</th>
+                                <th>Mô tả</th>
+                                <th>Số lượng manga</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Action</td>
+                                <td>Thể loại có nhiều cảnh hành động</td>
+                                <td>89</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm edit-category">Sửa</button>
+                                    <button class="btn btn-danger btn-sm delete-category">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Adventure</td>
+                                <td>Thể loại phiêu lưu, mạo hiểm</td>
+                                <td>76</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm edit-category">Sửa</button>
+                                    <button class="btn btn-danger btn-sm delete-category">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Comedy</td>
+                                <td>Thể loại hài hước</td>
+                                <td>58</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm edit-category">Sửa</button>
+                                    <button class="btn btn-danger btn-sm delete-category">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Drama</td>
+                                <td>Thể loại kịch tính</td>
+                                <td>45</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm edit-category">Sửa</button>
+                                    <button class="btn btn-danger btn-sm delete-category">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Fantasy</td>
+                                <td>Thể loại giả tưởng</td>
+                                <td>67</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm edit-category">Sửa</button>
+                                    <button class="btn btn-danger btn-sm delete-category">Xóa</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Users Page -->
+            <div class="page-content" id="users">
+                <div class="content-section">
+                    <div class="section-header">
+                        <h2>Quản lý người dùng</h2>
+                        <button class="btn btn-primary" id="add-user-btn">Thêm người dùng mới</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Tên người dùng</th>
+                                <th>Email</th>
+                                <th>Ngày đăng ký</th>
+                                <th>Vai trò</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>admin</td>
+                                <td>admin@mangaweb.com</td>
+                                <td>01/01/2024</td>
+                                <td>Admin</td>
+                                <td>Hoạt động</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm edit-user">Sửa</button>
+                                    <button class="btn btn-danger btn-sm delete-user">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>moderator1</td>
+                                <td>mod1@mangaweb.com</td>
+                                <td>15/02/2024</td>
+                                <td>Moderator</td>
+                                <td>Hoạt động</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm edit-user">Sửa</button>
+                                    <button class="btn btn-danger btn-sm delete-user">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>user123</td>
+                                <td>user123@gmail.com</td>
+                                <td>20/03/2024</td>
+                                <td>User</td>
+                                <td>Hoạt động</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm edit-user">Sửa</button>
+                                    <button class="btn btn-danger btn-sm delete-user">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>mangafan456</td>
+                                <td>mangafan456@yahoo.com</td>
+                                <td>05/04/2024</td>
+                                <td>User</td>
+                                <td>Hoạt động</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm edit-user">Sửa</button>
+                                    <button class="btn btn-danger btn-sm delete-user">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>otakuworld</td>
+                                <td>otakuworld@gmail.com</td>
+                                <td>12/04/2024</td>
+                                <td>User</td>
+                                <td>Bị khóa</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm edit-user">Sửa</button>
+                                    <button class="btn btn-danger btn-sm delete-user">Xóa</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Comments Page -->
+            <div class="page-content" id="comments">
+                <div class="content-section">
+                    <div class="section-header">
+                        <h2>Quản lý bình luận</h2>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment-filter">Lọc theo trạng thái</label>
+                        <select class="form-control" id="comment-filter">
+                            <option value="all">Tất cả</option>
+                            <option value="approved">Đã duyệt</option>
+                            <option value="pending">Chờ duyệt</option>
+                            <option value="spam">Spam</option>
+                        </select>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Người dùng</th>
+                                <th>Manga</th>
+                                <th>Chapter</th>
+                                <th>Nội dung</th>
+                                <th>Ngày đăng</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>user123</td>
+                                <td>One Piece</td>
+                                <td>Chapter 1088</td>
+                                <td>Chapter này quá hay! Không thể đợi đến chapter tiếp theo...</td>
+                                <td>12/04/2025</td>
+                                <td>Đã duyệt</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm">Duyệt</button>
+                                    <button class="btn btn-danger btn-sm">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>mangafan456</td>
+                                <td>Naruto</td>
+                                <td>Chapter 700</td>
+                                <td>Kết thúc thật xúc động!</td>
+                                <td>11/04/2025</td>
+                                <td>Đã duyệt</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm">Duyệt</button>
+                                    <button class="btn btn-danger btn-sm">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>otakuworld</td>
+                                <td>Bleach</td>
+                                <td>Chapter 686</td>
+                                <td>Tôi nghĩ rằng kết thúc này chưa thực sự hoàn thiện...</td>
+                                <td>10/04/2025</td>
+                                <td>Chờ duyệt</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm">Duyệt</button>
+                                    <button class="btn btn-danger btn-sm">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>newreader</td>
+                                <td>Attack on Titan</td>
+                                <td>Chapter 139</td>
+                                <td>Truyện này gây sốc quá! Tôi không ngờ lại kết thúc như vậy...</td>
+                                <td>09/04/2025</td>
+                                <td>Chờ duyệt</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm">Duyệt</button>
+                                    <button class="btn btn-danger btn-sm">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>animegeek</td>
+                                <td>My Hero Academia</td>
+                                <td>Chapter 425</td>
+                                <td>Nhân vật chính thật tuyệt vời!</td>
+                                <td>08/04/2025</td>
+                                <td>Spam</td>
+                                <td class="actions">
+                                    <button class="btn btn-primary btn-sm">Duyệt</button>
+                                    <button class="btn btn-danger btn-sm">Xóa</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Settings Page -->
+            <div class="page-content" id="settings">
+                <div class="content-section">
+                    <div class="section-header">
+                        <h2>Cài đặt hệ thống</h2>
+                    </div>
+                    <form id="settings-form">
+                        <div class="form-group">
+                            <label for="site-name">Tên trang web</label>
+                            <input type="text" class="form-control" id="site-name" value="Manga Web">
+                        </div>
+                        <div class="form-group">
+                            <label for="site-description">Mô tả trang web</label>
+                            <textarea class="form-control" id="site-description">Trang web đọc truyện manga online lớn nhất Việt Nam</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="items-per-page">Số truyện hiển thị trên mỗi trang</label>
+                            <input type="number" class="form-control" id="items-per-page" value="20">
+                        </div>
+                        <div class="form-group">
+                            <label for="allow-comments">Cho phép bình luận</label>
+                            <select class="form-control" id="allow-comments">
+                                <option value="1" selected>Có</option>
+                                <option value="0">Không</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="auto-approve-comments">Tự động duyệt bình luận</label>
+                            <select class="form-control" id="auto-approve-comments">
+                                <option value="1">Có</option>
+                                <option value="0" selected>Không</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="maintenance-mode">Chế độ bảo trì</label>
+                            <select class="form-control" id="maintenance-mode">
+                                <option value="1">Bật</option>
+                                <option value="0" selected>Tắt</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Lưu cài đặt</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Manga Modal -->
+    <div class="modal" id="add-manga-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Thêm Manga mới</h3>
+                <span class="close">&times;</span>
+            </div>
+            <form id="add-manga-form">
+                <div class="form-group">
+                    <label for="manga-title">Tên Manga</label>
+                    <input type="text" class="form-control" id="manga-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="manga-author">Tác giả</label>
+                    <input type="text" class="form-control" id="manga-author" required>
+                </div>
+                <div class="form-group">
+                    <label for="manga-cover">Ảnh bìa</label>
+                    <input type="file" class="form-control" id="manga-cover" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="manga-description">Mô tả</label>
+                    <textarea class="form-control" id="manga-description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="manga-categories">Thể loại</label>
+                    <select class="form-control" id="manga-categories" multiple>
+                        <option value="1">Action</option>
+                        <option value="2">Adventure</option>
+                        <option value="3">Comedy</option>
+                        <option value="4">Drama</option>
+                        <option value="5">Fantasy</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="manga-status">Trạng thái</label>
+                    <select class="form-control" id="manga-status">
+                        <option value="ongoing">Đang cập nhật</option>
+                        <option value="completed">Hoàn thành</option>
+                        <option value="dropped">Tạm dừng</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger close-modal">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Thêm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Chapter Modal -->
+    <div class="modal" id="add-chapter-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Thêm Chapter mới</h3>
+                <span class="close">&times;</span>
+            </div>
+            <form id="add-chapter-form">
+                <div class="form-group">
+                    <label for="chapter-manga">Manga</label>
+                    <select class="form-control" id="chapter-manga" required>
+                        <option value="">-- Chọn Manga --</option>
+                        <option value="1">One Piece</option>
+                        <option value="2">Naruto</option>
+                        <option value="3">Bleach</option>
+                        <option value="4">Attack on Titan</option>
+                        <option value="5">My Hero Academia</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="chapter-number">Số Chapter</label>
+                    <input type="text" class="form-control" id="chapter-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="chapter-title">Tiêu đề Chapter</label>
+                    <input type="text" class="form-control" id="chapter-title">
+                </div>
+                <div class="form-group">
+                    <label for="chapter-images">Tải lên ảnh</label>
+                    <input type="file" class="form-control" id="chapter-images" accept="image/*" multiple>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger close-modal">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Thêm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Category Modal -->
+    <div class="modal" id="add-category-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Thêm thể loại mới</h3>
+                <span class="close">&times;</span>
+            </div>
+            <form id="add-category-form">
+                <div class="form-group">
+                    <label for="category-name">Tên thể loại</label>
+                    <input type="text" class="form-control" id="category-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="category-description">Mô tả</label>
+                    <textarea class="form-control" id="category-description"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger close-modal">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Thêm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add User Modal -->
+    <div class="modal" id="add-user-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Thêm người dùng mới</h3>
+                <span class="close">&times;</span>
+            </div>
+            <form id="add-user-form">
+                <div class="form-group">
+                    <label for="user-name">Tên người dùng</label>
+                    <input type="text" class="form-control" id="user-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-email">Email</label>
+                    <input type="email" class="form-control" id="user-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-password">Mật khẩu</label>
+                    <input type="password" class="form-control" id="user-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-role">Vai trò</label>
+                    <select class="form-control" id="user-role">
+                        <option value="admin">Admin</option>
+                        <option value="moderator">Moderator</option>
+                        <option value="user" selected>User</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="user-status">Trạng thái</label>
+                    <select class="form-control" id="user-status">
+                        <option value="active" selected>Hoạt động</option>
+                        <option value="inactive">Không hoạt động</option>
+                        <option value="banned">Bị khóa</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger close-modal">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Thêm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="delete-confirm-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Xác nhận xóa</h3>
+                <span class="close">&times;</span>
+            </div>
+            <p>Bạn có chắc chắn muốn xóa mục này không? Hành động này không thể hoàn tác.</p>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary close-modal">Hủy</button>
+                <button type="button" class="btn btn-danger" id="confirm-delete">Xóa</button>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>
