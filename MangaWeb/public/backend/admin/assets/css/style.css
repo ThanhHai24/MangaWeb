@@ -101,6 +101,10 @@ body {
 .user-info {
     display: flex;
     align-items: center;
+    color: var(--dark);
+    font-weight: 500;
+    transition: all 0.2s;
+    cursor: pointer;
 }
 
 .user-info img {
@@ -338,4 +342,49 @@ textarea.form-control {
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
     color: #f8f9fa;
+}
+
+/* search bar */
+.search-container {
+    display: flex;
+    max-width: 600px;
+    margin: 15px 0;
+    position: relative;
+}
+
+.search-input {
+    flex: 1;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.search-input:focus {
+    border-color: #3498db;
+}
+
+.search-button {
+    padding: 12px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #2980b9;
+}
+
+/* Search Icon */
+.search-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
 }

@@ -1,9 +1,14 @@
 <div class="header">
-    <div class="search-bar">
-        <input type="text" placeholder="Tìm kiếm...">
-    </div>
     <div class="user-info">
-        <img src="/api/placeholder/40/40" alt="Admin User">
-        <span>Admin</span>
+        @auth
+            <img src="{{ asset(Auth::user() -> avatar) }}" alt="Admin User">
+            <span>{{ Auth::user()->username }}</span>
+            <!-- Hoặc bất kỳ thông tin nào khác của user -->
+        @endauth
+        
     </div>
+    <form action="{{ route('logout') }}" method="POST">
+        @csrf
+        <button type="submit" class="btn">Đăng xuất</button>
+    </form>
 </div>

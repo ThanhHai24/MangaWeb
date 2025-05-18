@@ -115,4 +115,11 @@ class Manga extends Model
     {
         return $this->chapters()->latest('chapter_number')->first();
     }
+
+    protected static function booted()
+{
+    static::deleting(function ($manga) {
+        $manga->chapters()->delete();
+    });
+}
 }

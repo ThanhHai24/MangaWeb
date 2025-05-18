@@ -21,9 +21,7 @@
     <a href="/admin/comments">
         <li class="menu-item {{ Request::is('admin/comments*') ? 'active' : '' }}" data-page="comments">Bình luận</li>
     </a>
-    <a href="/admin/settings">
-        <li class="menu-item {{ Request::is('admin/settings*') ? 'active' : '' }}" data-page="settings">Cài đặt</li>
-    </a>
+    
 </ul>
         </ul>
     </div>

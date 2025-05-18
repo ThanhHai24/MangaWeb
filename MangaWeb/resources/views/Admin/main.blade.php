@@ -12,6 +12,7 @@
         <div class="main-content">
             @include('Admin.layouts.header')
             <!-- Content -->
+            @yield('admin-search')
             @yield('content')
         </div>
         

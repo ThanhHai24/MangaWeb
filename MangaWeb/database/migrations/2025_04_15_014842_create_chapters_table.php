@@ -22,7 +22,6 @@ return new class extends Migration
             $table->integer('views')->default(0);
             $table->timestamps();
             $table->softDeletes();
-            
             $table->unique(['manga_id', 'chapter_number']);
             $table->unique(['manga_id', 'slug']);
         });

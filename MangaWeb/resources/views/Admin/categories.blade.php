@@ -1,4 +1,26 @@
 @extends('admin.main')
+@section('admin-search')
+<div class="page-content" id="categories">
+    <div class="content-section">
+        <div class="section-header">
+            <h2>Tìm kiếm</h2>
+        </div>
+        <form action="{{ route('category-search') }}" method="GET" id="search-form">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Nhập từ khóa tìm kiếm..." aria-label="Tìm kiếm" name="search" required>
+                <button class="search-button" type="submit">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    Tìm kiếm
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@endsection
 @section('content')
 <div class="page-content" id="categories">
     <div class="content-section">

@@ -1,7 +1,7 @@
 <div class="container">
       <div class="footer-content">
         <div class="footer-column">
-          <h3>Về TruyệnViet</h3>
+          <h3>Về PTITManga</h3>
           <ul class="footer-links">
             <li><a href="#">Giới thiệu</a></li>
             <li><a href="#">Liên hệ</a></li>
@@ -42,6 +42,7 @@
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; 2025 TruyệnViet. Tất cả các quyền được bảo lưu.</p>
+        <p>&copy; 2025 PTITManga.</p>
       </div>
     </div>
+@yield('scripts')

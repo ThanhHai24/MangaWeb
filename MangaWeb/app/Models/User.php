@@ -14,6 +14,7 @@ class User extends Authenticatable
 
     protected $fillable = [
         'username',
+        'displayname',
         'email',
         'password',
         'avatar',
@@ -53,5 +54,10 @@ class User extends Authenticatable
     public function readingHistories()
     {
         return $this->hasMany(ReadingHistory::class);
+    }
+
+        public function isAdmin()
+    {
+        return $this->role === 'admin'; // hoặc role_id === 1, tùy vào cách bạn định nghĩa quyền
     }
 }

@@ -44,18 +44,6 @@
         });
       }
     });
-    
-    // Giả lập chức năng đăng nhập
-    document.querySelector('.user-actions a:first-child').addEventListener('click', function(e) {
-      e.preventDefault();
-      alert('Chức năng đăng nhập sẽ được cài đặt ở đây');
-    });
-    
-    // Giả lập chức năng đăng ký
-    document.querySelector('.user-actions a:last-child').addEventListener('click', function(e) {
-      e.preventDefault();
-      alert('Chức năng đăng ký sẽ được cài đặt ở đây');
-    });
   </script>
 </body>
 </html>

@@ -1,11 +1,14 @@
 @extends('Frontend.layouts.main')
 @section('content')
-    <h1 class="category-title">{{ $category -> name }}</h1>
-    <p class="category-description">{{ $category -> description }}</p>
     
+    <div class="sorting-options">
+        <button class="sort-button {{ request()->query('sort', 'newest') == 'newest' ? 'active' : '' }}" data-sort="newest">Mới nhất</button>
+        <button class="sort-button {{ request()->query('sort') == 'most-viewed' ? 'active' : '' }}" data-sort="most-viewed">Xem nhiều</button>
+    </div>
     <section>
     <h2 class="section-title">
-        <span>Danh Sách truyện</span>
+        <span>{{ $title }}</span>
+        <a href="#">Xem tất cả</a>
     </h2>
     
     <div class="manga-grid">
@@ -69,4 +72,31 @@
     </ul>
 </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Xử lý sự kiện click trên nút sắp xếp
+        const sortButtons = document.querySelectorAll('.sort-button');
+        
+        sortButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Loại bỏ class active từ tất cả các nút
+                sortButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Thêm class active cho nút được click
+                this.classList.add('active');
+                
+                // Lấy giá trị sắp xếp
+                const sortType = this.getAttribute('data-sort');
+                
+                // Tạo URL mới với tham số sắp xếp
+                const url = new URL(window.location.href);
+                url.searchParams.set('sort', sortType);
+                
+                // Chuyển hướng đến URL mới
+                window.location.href = url.toString();
+            });
+        });
+    });
+</script>
 @endsection

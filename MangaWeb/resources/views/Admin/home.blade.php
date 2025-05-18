@@ -17,23 +17,20 @@
                 <div class="dashboard">
                     <div class="stat-card">
                         <h3>Tổng số Manga</h3>
-                        <div class="number">245</div>
-                        <div class="trend">+15 trong tháng này</div>
+                        <div class="number">{{$manga_count}}</div>
                     </div>
                     <div class="stat-card">
                         <h3>Lượt xem</h3>
-                        <div class="number">15,245</div>
-                        <div class="trend">+12% so với tháng trước</div>
+                        <div class="number">{{ $views }}</div>
+                        <!-- <div class="trend">+12% so với tháng trước</div> -->
                     </div>
                     <div class="stat-card">
                         <h3>Số lượng thành viên</h3>
-                        <div class="number">1,256</div>
-                        <div class="trend">+24 trong tuần này</div>
+                        <div class="number">{{$user_count}}</div>
                     </div>
                     <div class="stat-card">
-                        <h3>Bình luận mới</h3>
-                        <div class="number">342</div>
-                        <div class="trend down">-5% so với tuần trước</div>
+                        <h3>Bình luận</h3>
+                        <div class="number">{{$comment_count}}</div>
                     </div>
                 </div>
 
@@ -52,27 +49,16 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($updatedMangas as $updatedManga)
                             <tr>
-                                <td><img src="/api/placeholder/50/70" alt="Manga cover"></td>
-                                <td>One Piece</td>
-                                <td>Eiichiro Oda</td>
-                                <td>12/04/2025</td>
-                                <td>Đang cập nhật</td>
+                                <td><img src="{{$updatedManga -> cover_image}}" alt="Manga cover"></td>
+                                <td>{{$updatedManga -> title}}</td>
+                                <td>{{$updatedManga -> author}}</td>
+                                <td>{{$updatedManga -> created_at}}</td>
+                                <td>{{$updatedManga -> status}}</td>
                             </tr>
-                            <tr>
-                                <td><img src="/api/placeholder/50/70" alt="Manga cover"></td>
-                                <td>Naruto</td>
-                                <td>Masashi Kishimoto</td>
-                                <td>10/04/2025</td>
-                                <td>Hoàn thành</td>
-                            </tr>
-                            <tr>
-                                <td><img src="/api/placeholder/50/70" alt="Manga cover"></td>
-                                <td>Bleach</td>
-                                <td>Tite Kubo</td>
-                                <td>08/04/2025</td>
-                                <td>Hoàn thành</td>
-                            </tr>
+                            @endforeach
+                            
                         </tbody>
                     </table>
                 </div>

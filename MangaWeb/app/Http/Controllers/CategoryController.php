@@ -37,4 +37,35 @@ class CategoryController extends Controller
         return redirect('admin/categories')->with('success', 'Cập nhật thành công!');
     }
     
+    public function DeleteCategory($id){
+        try {
+            $category = Category::findOrFail($id);
+            
+            // Detach this category from all mangas
+            // This uses the existing relationship defined in your Category model
+            $category->mangas()->detach();
+            
+            // Now delete the category
+            $category->delete();
+            
+            return response()->json([
+                'success' => true,
+                'message' => 'Thể loại đã được xóa thành công và gỡ bỏ khỏi tất cả truyện.'
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Không thể xóa thể loại: ' . $e->getMessage()
+            ], 500);
+        }
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->search;
+        $categories = Category::where('name', 'LIKE', "%$search%")->get();
+        return view('admin.categories', [
+            'categories'=> $categories
+        ]);
+    }
 }
